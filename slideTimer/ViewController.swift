@@ -51,7 +51,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     
     // Test, for dev
-    var selectedSecs = 10
+    var selectedSecs = 30
     let picker = UIDatePicker()
     
     
