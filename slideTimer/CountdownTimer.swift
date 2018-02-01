@@ -17,7 +17,7 @@ class CountdownTimer {
     
     weak var delegate: CountdownTimerDelegate?
     
-    fileprivate var seconds = 0.0
+    var seconds = 0.0
     var duration = 0.0
     
     lazy var timer: Timer = {
@@ -50,6 +50,8 @@ class CountdownTimer {
         timer.invalidate()
         duration = seconds
         delegate?.countdownTime(time: timeString(time: TimeInterval(ceil(duration))))
+        seconds = 30
+        
     }
     
     

@@ -16,19 +16,36 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     //MARK - Outlets
     @IBOutlet weak var sliderHoursOutlet: UISlider!
     
-    @IBAction func sliderHoursAction(_ sender: UISlider) {
+    @IBAction func sliderHoursAction(_ sender: UISlider)
+    {
+        let value = Int(sender.value)
+        selectedHours = value
+        hours.text = String(value)
+        countdownTimer.duration = Double(sender.value)
+       // progressBar.timerDuration = self.selectedHours
+        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
     }
     @IBOutlet weak var sliderMinutesOutlet: UISlider!
-    @IBAction func sliderMinutesAction(_ sender: UISlider) {
+    @IBAction func sliderMinutesAction(_ sender: UISlider)
+    {
+        let value = Int(sender.value)
+        selectedMinutes = value
+        minutes.text = String(value)
+        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+       // progressBar.timerDuration = self.selectedMinutes
+        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+ 
     }
     @IBOutlet weak var sliderSecondsOutlet: UISlider!
     @IBAction func sliderSecondsAction(_ sender: UISlider)
     {
         selectedSecs = Int(sender.value)
-        countdownTimer.duration = Double(sender.value)
+        //countdownTimer.duration = Double(sender.value)
         seconds.text? = String(selectedSecs)
-        progressBar.timerDuration = self.selectedSecs
-    
+        //progressBar.timerDuration = self.selectedSecs
+        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
     }
     @IBOutlet weak var Date: UILabel!
     @IBOutlet weak var progressBar: ProgressBar!
@@ -52,6 +69,9 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     // Test, for dev
     var selectedSecs = 30
+    var selectedMinutes = 30
+    var selectedHours = 12
+    
     let picker = UIDatePicker()
     
     
@@ -112,6 +132,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     func countdownTimerDone() {
         
+        sliderHoursOutlet.isHidden = false
+        sliderMinutesOutlet.isHidden = false
         sliderSecondsOutlet.isHidden = false
         counterView.isHidden = true
         messageLabel.isHidden = false
@@ -131,12 +153,16 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     @IBAction func startTimer(_ sender: UIButton) {
         
+        sliderHoursOutlet.isHidden = true
+        sliderMinutesOutlet.isHidden = true
         sliderSecondsOutlet.isHidden = true
         messageLabel.isHidden = true
         counterView.isHidden = false
         
         stopBtn.isEnabled = true
         stopBtn.alpha = 1.0
+        
+        // Set progess bar and timer 
         
         if !countdownTimerDidStart{
             countdownTimer.start()
@@ -155,6 +181,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     @IBAction func stopTimer(_ sender: UIButton) {
         
+        sliderHoursOutlet.isHidden = false
+        sliderMinutesOutlet.isHidden = false
         sliderSecondsOutlet.isHidden = false
         countdownTimer.stop()
         progressBar.stop()
