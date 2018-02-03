@@ -22,9 +22,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         selectedHours = value
         hours.text = String(value)
         countdownTimer.duration = Double(sender.value)
-       // progressBar.timerDuration = self.selectedHours
-        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
-        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+       
     }
     @IBOutlet weak var sliderMinutesOutlet: UISlider!
     @IBAction func sliderMinutesAction(_ sender: UISlider)
@@ -32,9 +30,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         let value = Int(sender.value)
         selectedMinutes = value
         minutes.text = String(value)
-        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
-       // progressBar.timerDuration = self.selectedMinutes
-        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        
  
     }
     @IBOutlet weak var sliderSecondsOutlet: UISlider!
@@ -43,9 +39,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         selectedSecs = Int(sender.value)
         //countdownTimer.duration = Double(sender.value)
         seconds.text? = String(selectedSecs)
-        //progressBar.timerDuration = self.selectedSecs
-        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
-        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        
     }
     @IBOutlet weak var Date: UILabel!
     @IBOutlet weak var progressBar: ProgressBar!
@@ -162,7 +156,19 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.isEnabled = true
         stopBtn.alpha = 1.0
         
-        // Set progess bar and timer 
+        // Set progess bar and timer
+        
+        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        
+        
+        
+        progressBar.setProgressBar(hours: 0, minutes: 0, seconds: 10)
+        /*repeat {
+            
+            
+        }while <#condition#> {
+            <#code#>
+        }*/
         
         if !countdownTimerDidStart{
             countdownTimer.start()

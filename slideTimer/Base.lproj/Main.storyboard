@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKx-9W-6cu" customClass="ProgressBar" customModule="slideTimer" customModuleProvider="target">
-                                <rect key="frame" x="37" y="146.5" width="300" height="300"/>
+                                <rect key="frame" x="37" y="103.5" width="300" height="300"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="fOm-09-QYp"/>
@@ -121,20 +121,20 @@
                                     <constraint firstAttribute="height" constant="48" id="Xgo-6g-t7T"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vss-dK-ZbD">
-                                <rect key="frame" x="0.0" y="110" width="375" height="27.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vss-dK-ZbD">
+                                <rect key="frame" x="0.0" y="90" width="375" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="0.0" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="CV5-zJ-Nev">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="CV5-zJ-Nev">
                                 <rect key="frame" x="-2" y="464" width="379" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="sliderHoursAction:" destination="HrL-Be-TaV" eventType="valueChanged" id="Dft-r7-nAo"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="OHt-tn-ikR">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="OHt-tn-ikR">
                                 <rect key="frame" x="-2" y="502" width="379" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -154,10 +154,9 @@
                             <constraint firstItem="P6s-69-ya1" firstAttribute="top" secondItem="ejV-6d-8Fg" secondAttribute="bottom" constant="5" id="6V0-iC-hIO"/>
                             <constraint firstItem="JD6-so-ztW" firstAttribute="centerY" secondItem="0xi-ev-gH2" secondAttribute="centerY" constant="-80" id="AFS-xs-nON"/>
                             <constraint firstItem="Vss-dK-ZbD" firstAttribute="centerX" secondItem="JD6-so-ztW" secondAttribute="centerX" id="Ohe-nJ-nLY"/>
-                            <constraint firstItem="MKx-9W-6cu" firstAttribute="top" secondItem="Vss-dK-ZbD" secondAttribute="bottom" constant="5" id="On0-QW-4mY"/>
+                            <constraint firstItem="MKx-9W-6cu" firstAttribute="top" secondItem="Vss-dK-ZbD" secondAttribute="bottom" constant="-14" id="On0-QW-4mY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ejV-6d-8Fg" secondAttribute="trailing" id="PYB-bF-516"/>
                             <constraint firstItem="MKx-9W-6cu" firstAttribute="centerY" secondItem="0xi-ev-gH2" secondAttribute="centerY" constant="-80" id="QTi-9e-l3e"/>
-                            <constraint firstItem="Vss-dK-ZbD" firstAttribute="top" secondItem="xAk-AY-zi2" secondAttribute="bottom" constant="50" id="dDS-Ww-1xv"/>
                             <constraint firstItem="Vss-dK-ZbD" firstAttribute="leading" secondItem="0xi-ev-gH2" secondAttribute="leading" id="dWt-fL-lrS"/>
                             <constraint firstItem="ejV-6d-8Fg" firstAttribute="leading" secondItem="0xi-ev-gH2" secondAttribute="leadingMargin" id="dzv-uJ-Hds"/>
                             <constraint firstItem="MKx-9W-6cu" firstAttribute="centerX" secondItem="0xi-ev-gH2" secondAttribute="centerX" id="eCI-yf-TqG"/>
