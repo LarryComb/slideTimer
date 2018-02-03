@@ -163,7 +163,13 @@
                             <constraint firstItem="JD6-so-ztW" firstAttribute="centerX" secondItem="0xi-ev-gH2" secondAttribute="centerX" id="pKt-PB-zM6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QlR-lJ-BIs"/>
+                    <navigationItem key="navigationItem" id="QlR-lJ-BIs">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="uzz-AP-GIL">
+                            <connections>
+                                <action selector="Reset:" destination="HrL-Be-TaV" id="d8m-Go-vtP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Date" destination="Vss-dK-ZbD" id="E7R-qw-iVW"/>
                         <outlet property="counterView" destination="JD6-so-ztW" id="9zs-1H-bZW"/>

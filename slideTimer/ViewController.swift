@@ -14,6 +14,29 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     
     //MARK - Outlets
+    @IBAction func Reset(_ sender: Any) {
+        
+        sliderHoursOutlet.isHidden = false
+        sliderMinutesOutlet.isHidden = false
+        sliderSecondsOutlet.isHidden = false
+        messageLabel.isHidden = true
+        counterView.isHidden = false
+        
+        stopBtn.isEnabled = true
+        stopBtn.alpha = 1.0
+        
+        // Set progess bar and timer
+        
+        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        progressBar.setProgressBar(hours: 0, minutes: 0, seconds: 10)
+        
+        //countdownTimer.start()
+        //progressBar.start()
+        //countdownTimerDidStart = true
+        startBtn.setTitle("START",for: .normal)
+        
+        
+    }
     @IBOutlet weak var sliderHoursOutlet: UISlider!
     
     @IBAction func sliderHoursAction(_ sender: UISlider)
@@ -63,8 +86,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     // Test, for dev
     var selectedSecs = 30
-    var selectedMinutes = 30
-    var selectedHours = 12
+    var selectedMinutes = 0
+    var selectedHours = 0
     
     let picker = UIDatePicker()
     
@@ -94,9 +117,9 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
         view.addSubview(messageLabel)
         
-        var constraintCenter = NSLayoutConstraint(item: messageLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
+        var constraintCenter = NSLayoutConstraint(item: messageLabel, attribute: .centerX, relatedBy: .equal, toItem: self.minutes, attribute: .centerX, multiplier: 1, constant: 0)
         self.view.addConstraint(constraintCenter)
-        constraintCenter = NSLayoutConstraint(item: messageLabel, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0)
+        constraintCenter = NSLayoutConstraint(item: messageLabel, attribute: .centerY, relatedBy: .equal, toItem: self.minutes, attribute: .centerY, multiplier: 1, constant: 0)
         self.view.addConstraint(constraintCenter)
         
         
@@ -137,6 +160,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
         
+        //messageLabel.centerXAnchor.constraint(equalTo: minutes.centerXAnchor).isActive = true
+        //messageLabel.centerYAnchor.constraint(equalTo: minutes.centerYAnchor).isActive = true
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
         print("countdownTimerDone")
@@ -159,9 +184,6 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         // Set progess bar and timer
         
         countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
-        
-        
-        
         progressBar.setProgressBar(hours: 0, minutes: 0, seconds: 10)
         /*repeat {
             
@@ -187,6 +209,11 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     @IBAction func stopTimer(_ sender: UIButton) {
         
+        resetTimer()
+    }
+    
+    func resetTimer(){
+        
         sliderHoursOutlet.isHidden = false
         sliderMinutesOutlet.isHidden = false
         sliderSecondsOutlet.isHidden = false
@@ -196,9 +223,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
+        
     }
-    
-    
     
     
     
