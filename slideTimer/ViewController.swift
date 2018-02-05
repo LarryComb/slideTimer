@@ -14,6 +14,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     
     //MARK - Outlets
+    @IBOutlet weak var Reset: UIBarButtonItem!
     @IBAction func Reset(_ sender: Any) {
         
         sliderHoursOutlet.isHidden = false
@@ -22,13 +23,13 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         messageLabel.isHidden = true
         counterView.isHidden = false
         
-        stopBtn.isEnabled = true
+        stopBtn.isEnabled = false
         stopBtn.alpha = 1.0
-        
+        Reset.isEnabled = true
         // Set progess bar and timer
         
-        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
-        progressBar.setProgressBar(hours: 0, minutes: 0, seconds: 10)
+        //countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        //progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
         
         //countdownTimer.start()
         //progressBar.start()
@@ -114,7 +115,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         progressBar.setProgressBar(hours: 0, minutes: 0, seconds: selectedSecs)
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
-        
+        Reset.isEnabled = false
         view.addSubview(messageLabel)
         
         var constraintCenter = NSLayoutConstraint(item: messageLabel, attribute: .centerX, relatedBy: .equal, toItem: self.minutes, attribute: .centerX, multiplier: 1, constant: 0)
@@ -159,6 +160,10 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
+        Reset.isEnabled = true
+        //Reset.alpha = 0.5
+        
+        
         
         //messageLabel.centerXAnchor.constraint(equalTo: minutes.centerXAnchor).isActive = true
         //messageLabel.centerYAnchor.constraint(equalTo: minutes.centerYAnchor).isActive = true
@@ -180,17 +185,13 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
         stopBtn.isEnabled = true
         stopBtn.alpha = 1.0
+        Reset.isEnabled = true
         
         // Set progess bar and timer
         
         countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
-        progressBar.setProgressBar(hours: 0, minutes: 0, seconds: 10)
-        /*repeat {
-            
-            
-        }while <#condition#> {
-            <#code#>
-        }*/
+        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        
         
         if !countdownTimerDidStart{
             countdownTimer.start()
@@ -223,6 +224,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
+        Reset.isEnabled = false
+        
         
     }
     
