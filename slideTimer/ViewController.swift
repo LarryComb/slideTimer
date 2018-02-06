@@ -185,7 +185,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
         stopBtn.isEnabled = true
         stopBtn.alpha = 1.0
-        Reset.isEnabled = true
+        Reset.isEnabled = false
         
         // Set progess bar and timer
         
