@@ -46,6 +46,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         selectedHours = value
         hours.text = String(value)
         countdownTimer.duration = Double(sender.value)
+        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
        
     }
     @IBOutlet weak var sliderMinutesOutlet: UISlider!
@@ -54,6 +56,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         let value = Int(sender.value)
         selectedMinutes = value
         minutes.text = String(value)
+        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
         
  
     }
@@ -63,6 +67,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         selectedSecs = Int(sender.value)
         //countdownTimer.duration = Double(sender.value)
         seconds.text? = String(selectedSecs)
+        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
         
     }
     @IBOutlet weak var Date: UILabel!
@@ -189,8 +195,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
         // Set progess bar and timer
         
-        countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
-        progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
+        
         
         
         if !countdownTimerDidStart{
