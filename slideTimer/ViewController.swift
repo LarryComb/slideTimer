@@ -26,14 +26,6 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.isEnabled = false
         stopBtn.alpha = 1.0
         Reset.isEnabled = true
-        // Set progess bar and timer
-        
-        //countdownTimer.setTimer(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
-        //progressBar.setProgressBar(hours: selectedHours, minutes: selectedMinutes, seconds: selectedSecs)
-        
-        //countdownTimer.start()
-        //progressBar.start()
-        //countdownTimerDidStart = true
         startBtn.setTitle("START",for: .normal)
         
         
@@ -81,6 +73,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     @IBOutlet weak var startBtn: UIButton!
     
     
+    
     //MARK - Vars
     
     var countdownTimerDidStart = false
@@ -113,8 +106,15 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     }()
     
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        randomColor()
+        
+        
         
         countdownTimer.delegate = self
         countdownTimer.setTimer(hours: 0, minutes: 0, seconds: selectedSecs)
@@ -233,6 +233,18 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
         
     }
+    
+    func randomColor() {
+        let redValue = CGFloat(arc4random_uniform(256))/256.0
+        let blueValue = CGFloat(arc4random_uniform(256))/256.0
+        let greenValue = CGFloat(arc4random_uniform(256))/256.0
+        
+        self.view.backgroundColor = UIColor (red: redValue, green: greenValue, blue: blueValue, alpha: 1)
+    
+    }
+    
+    
+    
     
     
     
