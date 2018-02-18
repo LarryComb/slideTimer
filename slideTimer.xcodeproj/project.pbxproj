@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E21F02282039EFB500EB8FE0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21F02272039EFB500EB8FE0 /* AVFoundation.framework */; };
 		E2C1C9B62015411C00D2802C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C1C9B52015411C00D2802C /* AppDelegate.swift */; };
 		E2C1C9B82015411C00D2802C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C1C9B72015411C00D2802C /* ViewController.swift */; };
 		E2C1C9BB2015411C00D2802C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C1C9B92015411C00D2802C /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E21F02272039EFB500EB8FE0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E2C1C9B22015411C00D2802C /* slideTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slideTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C1C9B52015411C00D2802C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C1C9B72015411C00D2802C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E21F02282039EFB500EB8FE0 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E21F02262039EFB400EB8FE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E21F02272039EFB500EB8FE0 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E2C1C9A92015411C00D2802C = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +102,7 @@
 				E2C1C9C92015411C00D2802C /* slideTimerTests */,
 				E2C1C9D42015411C00D2802C /* slideTimerUITests */,
 				E2C1C9B32015411C00D2802C /* Products */,
+				E21F02262039EFB400EB8FE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

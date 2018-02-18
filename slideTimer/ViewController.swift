@@ -8,6 +8,7 @@
 
 import UIKit
 import AudioToolbox
+import AVFoundation
 
 class ViewController: UIViewController, CountdownTimerDelegate {
     
@@ -77,6 +78,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     //MARK - Vars
     
     var countdownTimerDidStart = false
+    var soundEffect: AVAudioPlayer = AVAudioPlayer()
     
     lazy var countdownTimer: CountdownTimer = {
         let countdownTimer = CountdownTimer()
@@ -197,8 +199,22 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
         //messageLabel.centerXAnchor.constraint(equalTo: minutes.centerXAnchor).isActive = true
         //messageLabel.centerYAnchor.constraint(equalTo: minutes.centerYAnchor).isActive = true
+        
+        
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
+        let musicFile = Bundle.main.path(forResource: "SystemSoundID", ofType: ".mp3")
+        do {
+            try soundEffect = AVAudioPlayer(contentsOf: URL (fileURLWithPath: musicFile!))
+        }
+        catch{
+            
+            print(error)
+        }
+        
+        soundEffect.play()
+        
+            
         print("countdownTimerDone")
     }
     
