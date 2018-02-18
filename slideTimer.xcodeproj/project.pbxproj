@@ -18,6 +18,7 @@
 		E2C1C9E6201542A000D2802C /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C1C9E5201542A000D2802C /* CustomColors.swift */; };
 		E2C1C9E82015431800D2802C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C1C9E72015431800D2802C /* ProgressBar.swift */; };
 		E2E61182203948BD0073EC1C /* HourSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E61181203948BD0073EC1C /* HourSlider.swift */; };
+		E2E6118420395C030073EC1C /* SystemSoundID.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2E6118320395C030073EC1C /* SystemSoundID.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E2C1C9E5201542A000D2802C /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		E2C1C9E72015431800D2802C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		E2E61181203948BD0073EC1C /* HourSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourSlider.swift; sourceTree = "<group>"; };
+		E2E6118320395C030073EC1C /* SystemSoundID.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SystemSoundID.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				E2C1C9BC2015411C00D2802C /* Assets.xcassets */,
 				E2C1C9BE2015411C00D2802C /* LaunchScreen.storyboard */,
 				E2C1C9C12015411C00D2802C /* Info.plist */,
+				E2E6118320395C030073EC1C /* SystemSoundID.mp3 */,
 			);
 			path = slideTimer;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				E2C1C9C02015411C00D2802C /* LaunchScreen.storyboard in Resources */,
 				E2C1C9BD2015411C00D2802C /* Assets.xcassets in Resources */,
+				E2E6118420395C030073EC1C /* SystemSoundID.mp3 in Resources */,
 				E2C1C9BB2015411C00D2802C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

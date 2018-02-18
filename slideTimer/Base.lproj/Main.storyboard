@@ -131,7 +131,7 @@
                                 <rect key="frame" x="-2" y="464" width="379" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="Hforhour5"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="hForHour"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sliderHoursAction:" destination="HrL-Be-TaV" eventType="valueChanged" id="Dft-r7-nAo"/>
@@ -141,7 +141,7 @@
                                 <rect key="frame" x="-2" y="502" width="379" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="Mforminute"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="mForMinute"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sliderMinutesAction:" destination="HrL-Be-TaV" eventType="valueChanged" id="Pno-sc-X4t"/>
@@ -151,7 +151,7 @@
                                 <rect key="frame" x="-2" y="539" width="379" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="Sforsecond"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="sForSecond"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sliderSecondsAction:" destination="HrL-Be-TaV" eventType="valueChanged" id="BT2-6D-L2v"/>
@@ -218,8 +218,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Hforhour5" width="30" height="32"/>
-        <image name="Mforminute" width="30" height="30"/>
-        <image name="Sforsecond" width="30" height="30"/>
+        <image name="hForHour" width="30" height="30"/>
+        <image name="mForMinute" width="30" height="30"/>
+        <image name="sForSecond" width="30" height="30"/>
     </resources>
 </document>
