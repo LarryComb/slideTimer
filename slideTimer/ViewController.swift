@@ -86,7 +86,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     }()
     
     
-    // Test, for dev
+    // MARK - Slider Load Setup 
     var selectedSecs = 30
     var selectedMinutes = 0
     var selectedHours = 0
@@ -107,15 +107,13 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         return label
     }()
     
-    
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         randomColor()
-        /*
+        
+        /* -m "Use Later"
         func generateRandomPastelColor(withMixedColor mixColor: UIColor?) -> UIColor {
             // Randomly generate number in closure
             let randomColorGenerator = { ()-> CGFloat in
@@ -193,13 +191,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
         Reset.isEnabled = true
-        //Reset.alpha = 0.5
         
-        
-        
-        //messageLabel.centerXAnchor.constraint(equalTo: minutes.centerXAnchor).isActive = true
-        //messageLabel.centerYAnchor.constraint(equalTo: minutes.centerYAnchor).isActive = true
-        
+       
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
@@ -233,10 +226,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.alpha = 1.0
         Reset.isEnabled = false
         
-        // Set progess bar and timer
         
-        
-        
+        // Set progessBar and countdownTimer
         
         if !countdownTimerDidStart{
             countdownTimer.start()
@@ -274,9 +265,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
     }
     
-    
-    
-    
+
     func randomColor(){
         
         let redValue = CGFloat(arc4random_uniform(256))/256.0
@@ -284,15 +273,6 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         let greenValue = CGFloat(arc4random_uniform(256))/256.0
         self.view.backgroundColor = UIColor (red: redValue, green: greenValue, blue: blueValue, alpha: 1)
         }
-        
-        
-        
-        
-    
-    
-    
- 
-    
-    
+
     
 }
