@@ -127,7 +127,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="CV5-zJ-Nev" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="CV5-zJ-Nev" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
                                 <rect key="frame" x="-2" y="464" width="379" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -137,7 +137,7 @@
                                     <action selector="sliderHoursAction:" destination="HrL-Be-TaV" eventType="valueChanged" id="Dft-r7-nAo"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="OHt-tn-ikR" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="OHt-tn-ikR" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
                                 <rect key="frame" x="-2" y="502" width="379" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -147,7 +147,7 @@
                                     <action selector="sliderMinutesAction:" destination="HrL-Be-TaV" eventType="valueChanged" id="Pno-sc-X4t"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-zb-MF6" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-zb-MF6" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
                                 <rect key="frame" x="-2" y="539" width="379" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
