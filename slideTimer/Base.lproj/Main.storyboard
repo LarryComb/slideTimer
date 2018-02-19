@@ -127,9 +127,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="CV5-zJ-Nev" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
-                                <rect key="frame" x="-2" y="464" width="379" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="CV5-zJ-Nev" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
+                                <rect key="frame" x="-2" y="462" width="379" height="31"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="hForHour"/>
                                 </userDefinedRuntimeAttributes>
@@ -137,9 +136,8 @@
                                     <action selector="sliderHoursAction:" destination="HrL-Be-TaV" eventType="valueChanged" id="Dft-r7-nAo"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="OHt-tn-ikR" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
-                                <rect key="frame" x="-2" y="502" width="379" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="OHt-tn-ikR" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
+                                <rect key="frame" x="-2" y="500" width="379" height="31"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="mForMinute"/>
                                 </userDefinedRuntimeAttributes>
@@ -147,9 +145,8 @@
                                     <action selector="sliderMinutesAction:" destination="HrL-Be-TaV" eventType="valueChanged" id="Pno-sc-X4t"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-zb-MF6" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
-                                <rect key="frame" x="-2" y="539" width="379" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-zb-MF6" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
+                                <rect key="frame" x="-2" y="538" width="379" height="31"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="sForSecond"/>
                                 </userDefinedRuntimeAttributes>
@@ -160,16 +157,25 @@
                         </subviews>
                         <color key="backgroundColor" red="0.43842944070000001" green="0.67053674149999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="pnM-zb-MF6" firstAttribute="trailing" secondItem="CV5-zJ-Nev" secondAttribute="trailing" id="42S-Li-HnH"/>
                             <constraint firstItem="P6s-69-ya1" firstAttribute="top" secondItem="ejV-6d-8Fg" secondAttribute="bottom" constant="5" id="6V0-iC-hIO"/>
+                            <constraint firstItem="OHt-tn-ikR" firstAttribute="leading" secondItem="CV5-zJ-Nev" secondAttribute="leading" id="9zU-Aj-r40"/>
                             <constraint firstItem="JD6-so-ztW" firstAttribute="centerY" secondItem="0xi-ev-gH2" secondAttribute="centerY" constant="-80" id="AFS-xs-nON"/>
+                            <constraint firstItem="CV5-zJ-Nev" firstAttribute="leading" secondItem="0xi-ev-gH2" secondAttribute="leading" id="Loa-7G-epv"/>
+                            <constraint firstItem="pnM-zb-MF6" firstAttribute="leading" secondItem="CV5-zJ-Nev" secondAttribute="leading" id="ONw-Sp-Se1"/>
                             <constraint firstItem="Vss-dK-ZbD" firstAttribute="centerX" secondItem="JD6-so-ztW" secondAttribute="centerX" id="Ohe-nJ-nLY"/>
                             <constraint firstItem="MKx-9W-6cu" firstAttribute="top" secondItem="Vss-dK-ZbD" secondAttribute="bottom" constant="-14" id="On0-QW-4mY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ejV-6d-8Fg" secondAttribute="trailing" id="PYB-bF-516"/>
                             <constraint firstItem="MKx-9W-6cu" firstAttribute="centerY" secondItem="0xi-ev-gH2" secondAttribute="centerY" constant="-80" id="QTi-9e-l3e"/>
+                            <constraint firstItem="OHt-tn-ikR" firstAttribute="trailing" secondItem="CV5-zJ-Nev" secondAttribute="trailing" id="XX6-ba-v4I"/>
+                            <constraint firstItem="pnM-zb-MF6" firstAttribute="top" secondItem="OHt-tn-ikR" secondAttribute="bottom" constant="8" id="Ysz-22-DDN"/>
+                            <constraint firstItem="ejV-6d-8Fg" firstAttribute="top" secondItem="pnM-zb-MF6" secondAttribute="bottom" constant="44" id="aCg-zj-svO"/>
                             <constraint firstItem="Vss-dK-ZbD" firstAttribute="leading" secondItem="0xi-ev-gH2" secondAttribute="leading" id="dWt-fL-lrS"/>
                             <constraint firstItem="ejV-6d-8Fg" firstAttribute="leading" secondItem="0xi-ev-gH2" secondAttribute="leadingMargin" id="dzv-uJ-Hds"/>
                             <constraint firstItem="MKx-9W-6cu" firstAttribute="centerX" secondItem="0xi-ev-gH2" secondAttribute="centerX" id="eCI-yf-TqG"/>
+                            <constraint firstAttribute="trailing" secondItem="CV5-zJ-Nev" secondAttribute="trailing" id="hT8-Vh-kk2"/>
                             <constraint firstItem="JD6-so-ztW" firstAttribute="centerX" secondItem="0xi-ev-gH2" secondAttribute="centerX" id="pKt-PB-zM6"/>
+                            <constraint firstItem="OHt-tn-ikR" firstAttribute="top" secondItem="CV5-zJ-Nev" secondAttribute="bottom" constant="8" id="pz7-nN-l0s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QlR-lJ-BIs">
