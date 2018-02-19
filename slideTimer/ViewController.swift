@@ -134,7 +134,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
                 blue = (blue + mixBlue) / 2;
             }
             
-            return UIColor(red: red, green: green, blue: blue, alpha: 0.8)
+            return UIColor(red: red, green: green, blue: blue, alpha: 0.5)
         
         }
         
