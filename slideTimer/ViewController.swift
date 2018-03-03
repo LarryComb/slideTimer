@@ -113,7 +113,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
         //randomColor()
         
-        
+       
         func generateRandomPastelColor(withMixedColor mixColor: UIColor?) -> UIColor {
             // Randomly generate number in closure
             let randomColorGenerator = { ()-> CGFloat in
@@ -273,7 +273,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         let redValue = CGFloat(arc4random_uniform(256))/256.0
         let blueValue = CGFloat(arc4random_uniform(256))/256.0
         let greenValue = CGFloat(arc4random_uniform(256))/256.0
-        return UIColor (red: redValue, green: greenValue, blue: blueValue, alpha: 1)
+        return UIColor (red: redValue, green: greenValue, blue: blueValue, alpha: 0.5)
     }
 
     
