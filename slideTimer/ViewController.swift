@@ -15,6 +15,12 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     
     //MARK - Outlets
+    @IBOutlet weak var History: UIBarButtonItem!
+    @IBAction func History(_ sender: Any) {
+        
+        
+    }
+    
     @IBOutlet weak var Reset: UIBarButtonItem!
     @IBAction func Reset(_ sender: Any) {
         
