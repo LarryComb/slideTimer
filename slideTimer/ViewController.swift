@@ -282,5 +282,11 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         return UIColor (red: redValue, green: greenValue, blue: blueValue, alpha: 0.5)
     }
 
+    func countArray (){
+       // print(count)
+        
+    }
+    
+    
     
 }

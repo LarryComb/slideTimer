@@ -8,10 +8,16 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
-
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+   
+    @IBOutlet weak var tableView: UITableView!
+  
+    var data = ["one", "two", "three", "four", "five"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.reloadData()
 
         // Do any additional setup after loading the view.
     }
@@ -22,14 +28,31 @@ class HistoryViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+ 
+        //ViewController.countArray.count
+ 
+    }
+    
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = data[indexPath.row]
+        
+        return cell
+    }
+    /*
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            ViewController.removeCountArray(atIndex: indexPath.row)
+            tableView.deleteRows(at: indexPath, with: .fade)
+        }
+    }*/
+ 
 }
+
