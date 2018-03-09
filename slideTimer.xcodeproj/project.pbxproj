@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E21F02282039EFB500EB8FE0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21F02272039EFB500EB8FE0 /* AVFoundation.framework */; };
 		E2207430204B4F1200F5DDD2 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E220742F204B4F1200F5DDD2 /* HistoryViewController.swift */; };
+		E2207432205209B900F5DDD2 /* SlideTimerUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2207431205209B900F5DDD2 /* SlideTimerUserDefaults.swift */; };
 		E2C1C9B62015411C00D2802C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C1C9B52015411C00D2802C /* AppDelegate.swift */; };
 		E2C1C9B82015411C00D2802C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C1C9B72015411C00D2802C /* ViewController.swift */; };
 		E2C1C9BB2015411C00D2802C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C1C9B92015411C00D2802C /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		E21F02272039EFB500EB8FE0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E220742F204B4F1200F5DDD2 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		E2207431205209B900F5DDD2 /* SlideTimerUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTimerUserDefaults.swift; sourceTree = "<group>"; };
 		E2C1C9B22015411C00D2802C /* slideTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slideTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C1C9B52015411C00D2802C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C1C9B72015411C00D2802C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				E2C1C9BE2015411C00D2802C /* LaunchScreen.storyboard */,
 				E2C1C9C12015411C00D2802C /* Info.plist */,
 				E2E6118320395C030073EC1C /* SystemSoundID.mp3 */,
+				E2207431205209B900F5DDD2 /* SlideTimerUserDefaults.swift */,
 			);
 			path = slideTimer;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2207432205209B900F5DDD2 /* SlideTimerUserDefaults.swift in Sources */,
 				E2C1C9B82015411C00D2802C /* ViewController.swift in Sources */,
 				E2C1C9E42015426200D2802C /* CountdownTimer.swift in Sources */,
 				E2C1C9E6201542A000D2802C /* CustomColors.swift in Sources */,

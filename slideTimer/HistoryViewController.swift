@@ -13,46 +13,40 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
   
     var data = ["one", "two", "three", "four", "five"]
+    var model = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        model = SlideTimerUserDefaults().getAllEntries()
         
         tableView.reloadData()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
- 
-        //ViewController.countArray.count
+        return model.count
+            
+        
  
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = data[indexPath.row]
+        cell.textLabel?.text = model[indexPath.row]
         
         return cell
     }
-    /*
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            ViewController.removeCountArray(atIndex: indexPath.row)
-            tableView.deleteRows(at: indexPath, with: .fade)
+            model.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
-    }*/
+    }
  
 }
 

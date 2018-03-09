@@ -234,6 +234,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.alpha = 1.0
         Reset.isEnabled = false
         
+        let string = hours.text! + ":" + minutes.text! + ":" + seconds.text!
+        SlideTimerUserDefaults().add(entry: string)
         
         // Set progessBar and countdownTimer
         
