@@ -10,22 +10,26 @@ import UIKit
 
 struct SlideTimerUserDefaults {
 
+    let defaults = UserDefaults.standard
     let timeEntriesArrayKey = "timeEntriesArrayKey"
     
     func add(entry: String) {
-        let defaults = UserDefaults.standard
+        
         if var array = defaults.array(forKey: timeEntriesArrayKey) {
             array.append(entry)
             defaults.set(array, forKey: timeEntriesArrayKey)
+        
         } else {
             defaults.set([entry], forKey: timeEntriesArrayKey)
+            UserDefaults.standard.removePersistentDomain(forName: timeEntriesArrayKey)
         }
         
         defaults.synchronize()
     }
+
+    
     
     func getAllEntries() -> [String] {
-        let defaults = UserDefaults.standard
         if let array = defaults.array(forKey: timeEntriesArrayKey) as? [String] {
             return array
         } else {

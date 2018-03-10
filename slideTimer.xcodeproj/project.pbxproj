@@ -126,6 +126,7 @@
 				E2C1C9B52015411C00D2802C /* AppDelegate.swift */,
 				E2C1C9B72015411C00D2802C /* ViewController.swift */,
 				E220742F204B4F1200F5DDD2 /* HistoryViewController.swift */,
+				E2207431205209B900F5DDD2 /* SlideTimerUserDefaults.swift */,
 				E2C1C9E32015426200D2802C /* CountdownTimer.swift */,
 				E2E61181203948BD0073EC1C /* HourSlider.swift */,
 				E2C1C9E5201542A000D2802C /* CustomColors.swift */,
@@ -135,7 +136,6 @@
 				E2C1C9BE2015411C00D2802C /* LaunchScreen.storyboard */,
 				E2C1C9C12015411C00D2802C /* Info.plist */,
 				E2E6118320395C030073EC1C /* SystemSoundID.mp3 */,
-				E2207431205209B900F5DDD2 /* SlideTimerUserDefaults.swift */,
 			);
 			path = slideTimer;
 			sourceTree = "<group>";

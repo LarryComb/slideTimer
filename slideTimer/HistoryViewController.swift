@@ -9,10 +9,11 @@
 import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
+    
     @IBOutlet weak var tableView: UITableView!
-  
-    var data = ["one", "two", "three", "four", "five"]
+    let defaults = UserDefaults.standard
+    let timeEntriesArrayKey = "timeEntriesArrayKey"
+    
     var model = [String]()
     
     override func viewDidLoad() {
@@ -21,19 +22,18 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         model = SlideTimerUserDefaults().getAllEntries()
         
         tableView.reloadData()
-
+        
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
-            
         
- 
+        
     }
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = model[indexPath.row]
@@ -45,8 +45,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         if editingStyle == UITableViewCellEditingStyle.delete {
             model.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            defaults.set(model, forKey: timeEntriesArrayKey)
         }
     }
- 
+    
 }
-
