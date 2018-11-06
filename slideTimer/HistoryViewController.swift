@@ -8,9 +8,8 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HistoryViewController: UITableViewController {
     
-    @IBOutlet weak var tableView: UITableView!
     let defaults = UserDefaults.standard
     let timeEntriesArrayKey = "timeEntriesArrayKey"
     
@@ -19,34 +18,52 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.allowsMultipleSelectionDuringEditing = true
+        
         model = SlideTimerUserDefaults().getAllEntries()
         
-        tableView.reloadData()
-        
-        // Do any additional setup after loading the view.
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editRows)), UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteRows))]
     }
     
+    @objc private func editRows() {
+        isEditing = !isEditing
+    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @objc private func deleteRows() {
+        if let selectedRows = tableView.indexPathsForSelectedRows {
+            var items = [String]()
+            for indexPath in selectedRows  {
+                items.append(model[indexPath.row])
+            }
+            for item in items {
+                if let index = model.index(of: item) {
+                    model.remove(at: index)
+                }
+            }
+            
+            tableView.beginUpdates()
+            tableView.deleteRows(at: selectedRows, with: .automatic)
+            tableView.endUpdates()
+            defaults.set(model, forKey: timeEntriesArrayKey)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
-        
-        
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         cell.textLabel?.text = model[indexPath.row]
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             model.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             defaults.set(model, forKey: timeEntriesArrayKey)
         }
     }
-    
 }
