@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wBY-Xq-yUC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wBY-Xq-yUC">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -122,13 +121,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vss-dK-ZbD">
-                                <rect key="frame" x="0.0" y="162.33333333333334" width="374" height="27.666666666666657"/>
+                                <rect key="frame" x="0.0" y="162.33333333333334" width="375" height="27.666666666666657"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="CV5-zJ-Nev" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
-                                <rect key="frame" x="-2" y="576" width="379" height="30"/>
+                                <rect key="frame" x="-2" y="573" width="379" height="31"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="hForHour"/>
                                 </userDefinedRuntimeAttributes>
@@ -137,7 +136,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="OHt-tn-ikR" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
-                                <rect key="frame" x="-2" y="613" width="379" height="30"/>
+                                <rect key="frame" x="-2" y="611" width="379" height="31"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="mForMinute"/>
                                 </userDefinedRuntimeAttributes>
@@ -146,7 +145,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-zb-MF6" customClass="HourSlider" customModule="slideTimer" customModuleProvider="target">
-                                <rect key="frame" x="-2" y="650" width="379" height="30"/>
+                                <rect key="frame" x="-2" y="649" width="379" height="31"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="hourThumbImage" value="sForSecond"/>
                                 </userDefinedRuntimeAttributes>
@@ -182,7 +181,7 @@
                         <barButtonItem key="leftBarButtonItem" title="History" id="sfU-FT-abb">
                             <connections>
                                 <action selector="History:" destination="HrL-Be-TaV" id="HcW-z1-SAK"/>
-                                <segue destination="exn-ol-Uzr" kind="show" id="quf-XB-xaE"/>
+                                <segue destination="BbO-ia-44o" kind="show" id="BHK-1d-DYH"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="uzz-AP-GIL">
@@ -212,46 +211,41 @@
             <point key="canvasLocation" x="572" y="147.97601199400302"/>
         </scene>
         <!--History View Controller-->
-        <scene sceneID="ksR-cu-PZe">
+        <scene sceneID="1Pv-v8-xyL">
             <objects>
-                <viewController id="exn-ol-Uzr" customClass="HistoryViewController" customModule="slideTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kQb-4X-dJq"/>
-                        <viewControllerLayoutGuide type="bottom" id="bms-R5-oFf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qcL-BT-pry">
+                <tableViewController id="BbO-ia-44o" customClass="HistoryViewController" customModule="slideTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vOE-aC-09I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MRa-KE-dx4">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="WEa-1i-zXk">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WEa-1i-zXk" id="iBm-X6-Bah">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="exn-ol-Uzr" id="IaF-14-frL"/>
-                                    <outlet property="delegate" destination="exn-ol-Uzr" id="cer-9P-Ujw"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="MRa-KE-dx4" id="Ckf-p0-avy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Wp-Cu-uj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="SHg-1l-KtL" style="IBUITableViewCellStyleDefault" id="bEx-cp-7R0">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bEx-cp-7R0" id="eF1-u9-Zl2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SHg-1l-KtL">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BbO-ia-44o" id="tY4-Fq-tHI"/>
+                            <outlet property="delegate" destination="BbO-ia-44o" id="Kzg-Mb-oHv"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tho-el-3tS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="147.78325123152709"/>
+            <point key="canvasLocation" x="1330" y="148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DGI-Hp-qxV">
@@ -273,8 +267,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hForHour" width="30" height="30"/>
-        <image name="mForMinute" width="30" height="30"/>
-        <image name="sForSecond" width="30" height="30"/>
+        <image name="hForHour" width="90" height="90"/>
+        <image name="mForMinute" width="90" height="90"/>
+        <image name="sForSecond" width="90" height="90"/>
     </resources>
 </document>
